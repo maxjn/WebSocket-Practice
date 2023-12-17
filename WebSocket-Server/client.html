@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Hellow WebSocket
+    <script>
+      let ws = new WebSocket('ws://localhost:8000');
+
+      ws.onopen = (event)=>{
+        console.log("Event On Open: ",event)
+        ws.send('Glad to finally see you here')
+
+
+      }
+
+      ws.onmessage = (message) =>{
+        console.log('Server says:', message.data)
+      }
+
+    </script>
+  </body>
+</html>
