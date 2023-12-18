@@ -14,8 +14,9 @@ These are some basic projects for practicing and learning **WebSocket** and **So
 
 ## Features
 
-- **WebSocket-Server:** Firt Simple Websocket Server
+- **WebSocket-Server:**: Firt Simple Websocket Server
 - **Socket.io-Server**: First Simple Socket.io Server
+- **Simple-Chat**: Implementing two side communication
 
 ## Installation (locally)
 

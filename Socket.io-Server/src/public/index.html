@@ -4,7 +4,7 @@
     <!-- ... other head elements ... -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <title>Socket.io Client</title>
     <script src="/socket.io/socket.io.js"></script>
   </head>
@@ -13,11 +13,25 @@
     <script>
       const socket = io("http://localhost:5000");
 
+      // Put Listeners Outside of connect
+      socket.on("connect", () => {
+        socket.emit("messageToServer", {
+          data: "Hello Socket Nice To Meet You!",
+        });
+      });
+
       socket.on("messageToClient", (message) => {
         console.log("Server says: ", message.data);
       });
+      
+      //  .io reconnect belongs to manager not Events
+      socket.io.on("reconnect", (attempts) => {
+        console.log(`Reconnected with ${attempts} attempts `);
+      });
 
-      socket.emit("messageToServer", { data: "Hello Socket Nice To Meet You!" });
+      socket.emit("messageToServer", {
+        data: "Hello Socket Nice To Meet You!",
+      });
     </script>
   </body>
 </html>
