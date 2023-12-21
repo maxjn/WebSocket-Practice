@@ -17,6 +17,7 @@ These are some basic projects for practicing and learning **WebSocket** and **So
 - **WebSocket-Server:**: Firt Simple Websocket Server
 - **Socket.io-Server**: First Simple Socket.io Server
 - **Simple-Chat**: Implementing two side communication
+- **Namespaces**: Simple-Chat using Namespaces & Rooms
 
 ## Installation (locally)
 
